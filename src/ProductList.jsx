@@ -7,7 +7,7 @@ function ProductList({ products }) {
     return (
         <div>
 
-            <h3>Product List</h3>
+            <h3>List of Products Available:</h3>
 
            {/*Using the map() function to render a ProductItem component for each product.*/}
 
