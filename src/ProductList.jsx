@@ -14,7 +14,7 @@ function ProductList({ products }) {
             {products.map(product => (
 
                 /*Passing each product’s data and a unique key to ProductItem*/
-                
+               /* Task 5:Implement Keys in the ProductList Component*/
                 <ProductItem key={product.id} product={product} /> 
             ))}
 
@@ -23,3 +23,5 @@ function ProductList({ products }) {
 }
 
 export default ProductList;
+
+
