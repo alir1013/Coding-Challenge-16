@@ -8,18 +8,26 @@ import './App.css';
 
 //Defining a default list of products as an array of objects 
 function App() {
-  const [products] = useState([
+  const [products, setProducts] = useState([
     { id: 1, name: 'Macbook', price: 2100, description: 'A 14-cpu laptop, high speed, great performance' },
     { id: 2, name: 'Iphone', price: 1500, description: 'Fast charging, high speed, great performance' },
     { id: 3, name: 'Ipad', price: 800, description: 'Small and durable, high speed, great performance' },
 
   ]);
+
+  //Task 7: Pass Data Between Components
+  const addNewProduct = (newProduct) => {
+    setProducts(prevProducts => [...prevProducts, { ...newProduct, id: prevProducts}]);
+};
+
 //Rendering the ProductList and AddProductForm components inside the App component
   return (
    <div>
+
     <h2>Product DashBoard</h2>
     <ProductList products={products} />
-    <AddProductForm />
+    <AddProductForm addProduct={addNewProduct} />
+
    </div>
   );
 }

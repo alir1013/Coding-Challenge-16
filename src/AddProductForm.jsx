@@ -2,20 +2,25 @@
 
 import React, { useState } from 'react';
 
-function AddProductForm() {
+
+function AddProductForm({addProduct}) {
+    //Manging the form;s input fields
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
 
+  //Form Submission
   const submitButton = (event) => {
     event.preventDefault();
-   
-    console.log(name, price, description);
+    addProduct({name,price,description }); 
+
+    //Used to reset input field
     setName('');
     setPrice('');
     setDescription('');
   };
 
+  //Rendering the form
   return (
     <form onSubmit={submitButton}>
       <input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder="Product Name"/>
